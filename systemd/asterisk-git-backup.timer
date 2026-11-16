@@ -1,0 +1,11 @@
+[Unit]
+Description=Periodic recursive Asterisk backup change check
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=1min
+AccuracySec=10s
+Unit=asterisk-git-backup.service
+
+[Install]
+WantedBy=timers.target

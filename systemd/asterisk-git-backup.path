@@ -1,0 +1,12 @@
+[Unit]
+Description=Watch the Asterisk configuration backup checkout
+After=remote-fs.target
+RequiresMountsFor=/mnt/nas/backups/asterisk
+
+[Path]
+PathExists=/mnt/nas/backups/asterisk/.git
+PathChanged=/mnt/nas/backups/asterisk
+Unit=asterisk-git-backup.service
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,18 @@
+*.key
+*.pem
+*.crt
+*token*
+.env
+result*
+*.img
+*.img.zst
+__pycache__/
+*.py[cod]
+
+# Local credentials and generated state
+.secrets/
+secrets/
+*.secret
+gateway.yaml
+authorized_keys
+known_hosts

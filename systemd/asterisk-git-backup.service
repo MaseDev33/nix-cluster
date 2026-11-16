@@ -1,0 +1,17 @@
+[Unit]
+Description=Commit and push Asterisk configuration backups
+After=network-online.target remote-fs.target
+Wants=network-online.target
+RequiresMountsFor=/mnt/nas/backups/asterisk
+
+[Service]
+Type=oneshot
+ExecStart=/etc/asterisk-git-backup.sh
+User=root
+Group=root
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/mnt/nas/backups
